@@ -1,0 +1,450 @@
+:root {
+  /* colors */
+  --bg: #f3f4f6;
+  --bg-sidebar: #0f172a;
+  --surface: #ffffff;
+  --surface-soft: #f9fafb;
+  --border: #e5e7eb;
+  --border-soft: #d1d5db;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: #e0ecff;
+  --accent-dark: #1d4ed8;
+
+  --status-paid: #16a34a;
+  --status-pending: #2563eb;
+  --status-overdue: #dc2626;
+
+  /* spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* radius & shadow */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
+  --shadow-soft: 0 0.6rem 2rem rgba(15, 23, 42, 0.08);
+
+  /* font */
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font);
+  color: var(--text-main);
+  background: var(--bg);
+}
+
+/* layout */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* sidebar */
+
+.sidebar {
+  background: #111827;
+  color: #e5e7eb;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-icon {
+  padding: 0.45rem;
+  border-radius: 0.75rem;
+  background: #2563eb;
+  font-size: 1.1rem;
+}
+
+.brand-name {
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.nav-link:hover {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.nav-link.active {
+  background: #e5edff;
+  color: #1d4ed8;
+}
+
+.nav-link.active .nav-icon {
+  opacity: 1;
+}
+
+.nav-icon {
+  opacity: 0.85;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.avatar-sm {
+  width: 2.2rem;
+  aspect-ratio: 1/1;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.user-email {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* main */
+
+.main {
+  flex: 1;
+  padding: var(--space-lg);
+  background: var(--bg);
+}
+
+.main-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.4rem;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+/* metrics */
+
+.metrics-grid {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.metric-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(209, 213, 219, 0.7);
+}
+
+.metric-label-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.metric-icon {
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.metric-icon-primary {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.metric-icon-soft {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.metric-icon-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.metric-value {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* content grid */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr);
+  gap: var(--space-md);
+}
+
+/* cards */
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(209, 213, 219, 0.7);
+}
+
+/* table */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.invoice-table thead {
+  background: var(--surface-soft);
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.invoice-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.invoice-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.invoice-table tbody tr.is-selected {
+  background: #eef2ff;
+}
+
+/* statuses */
+
+.status {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-paid {
+  color: var(--status-paid);
+}
+
+.status-pending {
+  color: var(--status-pending);
+}
+
+.status-overdue {
+  color: var(--status-overdue);
+}
+
+/* details column */
+
+.details-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.detail-card {
+  padding: var(--space-md);
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.detail-id {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.detail-block {
+  padding-block: var(--space-xs);
+  border-top: 1px solid var(--border);
+}
+
+.detail-block:first-of-type {
+  border-top: none;
+}
+
+.detail-block-label {
+  margin: 0 0 0.15rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+
+.detail-client-name {
+  margin: 0;
+  font-weight: 500;
+}
+
+.detail-client-email {
+  margin: 0;
+}
+
+.detail-amount {
+  font-weight: 600;
+}
+
+/* line items */
+
+.line-item {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-block: var(--space-xs);
+  border-top: 1px solid var(--border);
+}
+
+.line-item:first-of-type {
+  border-top: none;
+}
+
+.line-title {
+  margin: 0 0 0.15rem;
+  font-size: 0.9rem;
+}
+
+.line-meta {
+  margin: 0;
+}
+
+.line-amount {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.line-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--space-sm);
+  margin-top: var(--space-sm);
+  border-top: 1px solid var(--border-soft);
+  font-weight: 600;
+}
+
+/* responsive */
+
+@media (min-width: 48rem) {
+  .app {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    flex: 0 0 15rem;
+    min-height: 100vh;
+  }
+
+  .main {
+    padding: var(--space-xl);
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .content-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.9fr);
+  }
+}
