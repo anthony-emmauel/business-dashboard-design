@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>InvoiceHub – Invoices</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <a href="#" class="brand">
+            <div class="brand-icon">💲</div>
+            <span class="brand-name">InvoiceHub</span>
+          </a>
+
+          <nav class="nav">
+            <a href="#" class="nav-link">
+              <span class="nav-icon">🏠</span>
+              <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-link active">
+              <span class="nav-icon">📄</span>
+              <span>Invoices</span>
+            </a>
+            <a href="#" class="nav-link">
+              <span class="nav-icon">👥</span>
+              <span>Clients</span>
+            </a>
+            <a href="#" class="nav-link">
+              <span class="nav-icon">⚙️</span>
+              <span>Settings</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="user-pill">
+            <div class="avatar-sm">JD</div>
+            <div class="user-text">
+              <p class="user-name">John Doe</p>
+              <p class="user-email">john@company.com</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="main">
+        <header class="main-header">
+          <div>
+            <h1>Invoices</h1>
+            <p class="text-muted">Manage and track all your invoices</p>
+          </div>
+        </header>
+
+        <!-- KPI cards -->
+        <section class="metrics-grid">
+          <article class="metric-card">
+            <div class="metric-label-row">
+              <div class="metric-icon metric-icon-primary">💲</div>
+              <span class="metric-label">Total Revenue</span>
+            </div>
+            <p class="metric-value">$70,150</p>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-label-row">
+              <div class="metric-icon metric-icon-soft">⏱</div>
+              <span class="metric-label">Pending</span>
+            </div>
+            <p class="metric-value">$31,150</p>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-label-row">
+              <div class="metric-icon metric-icon-danger">⚠️</div>
+              <span class="metric-label">Overdue</span>
+            </div>
+            <p class="metric-value">$19,700</p>
+          </article>
+        </section>
+
+        <!-- Main layout: table + detail -->
+        <section class="content-grid">
+          <!-- Invoice table -->
+          <section class="card">
+            <div class="table-wrapper">
+              <table class="invoice-table">
+                <thead>
+                  <tr>
+                    <th>Invoice ID</th>
+                    <th>Client Name</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="is-selected">
+                    <td>INV-001</td>
+                    <td>Acme Corporation</td>
+                    <td>$12,500</td>
+                    <td><span class="status status-paid">Paid</span></td>
+                    <td>01/10/2025</td>
+                  </tr>
+                  <tr>
+                    <td>INV-002</td>
+                    <td>TechStart Inc.</td>
+                    <td>$8,750</td>
+                    <td><span class="status status-pending">Pending</span></td>
+                    <td>03/10/2025</td>
+                  </tr>
+                  <tr>
+                    <td>INV-003</td>
+                    <td>Global Solutions LLC</td>
+                    <td>$15,200</td>
+                    <td><span class="status status-overdue">Overdue</span></td>
+                    <td>20/09/2025</td>
+                  </tr>
+                  <tr>
+                    <td>INV-004</td>
+                    <td>Creative Agency</td>
+                    <td>$6,800</td>
+                    <td><span class="status status-paid">Paid</span></td>
+                    <td>05/10/2025</td>
+                  </tr>
+                  <tr>
+                    <td>INV-005</td>
+                    <td>DataCorp Systems</td>
+                    <td>$22,400</td>
+                    <td><span class="status status-pending">Pending</span></td>
+                    <td>07/10/2025</td>
+                  </tr>
+                  <tr>
+                    <td>INV-006</td>
+                    <td>Retail Plus</td>
+                    <td>$4,500</td>
+                    <td><span class="status status-overdue">Overdue</span></td>
+                    <td>25/09/2025</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Invoice details -->
+          <aside class="details-column">
+            <section class="card detail-card">
+              <header class="detail-header">
+                <div>
+                  <p class="detail-id">INV-001</p>
+                </div>
+                <span class="status status-paid">Paid</span>
+              </header>
+
+              <div class="detail-block">
+                <p class="detail-block-label">Client</p>
+                <p class="detail-client-name">Acme Corporation</p>
+                <p class="detail-client-email text-muted small">
+                  finance@acme.com
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <p class="detail-block-label">Issue Date</p>
+                <p>October 1, 2025</p>
+              </div>
+
+              <div class="detail-block">
+                <p class="detail-block-label">Due Date</p>
+                <p>October 15, 2025</p>
+              </div>
+
+              <div class="detail-block">
+                <p class="detail-block-label">Amount</p>
+                <p class="detail-amount">$12,500</p>
+              </div>
+            </section>
+
+            <section class="card detail-card">
+              <header class="detail-block">
+                <p class="detail-block-label">Line Items</p>
+              </header>
+
+              <div class="line-item">
+                <div>
+                  <p class="line-title">Web Development Services</p>
+                  <p class="line-meta text-muted small">40 × $150</p>
+                </div>
+                <p class="line-amount">$6,000</p>
+              </div>
+
+              <div class="line-item">
+                <div>
+                  <p class="line-title">UI/UX Design</p>
+                  <p class="line-meta text-muted small">50 × $130</p>
+                </div>
+                <p class="line-amount">$6,500</p>
+              </div>
+
+              <div class="line-total">
+                <p>Total</p>
+                <p class="detail-amount">$12,500</p>
+              </div>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
